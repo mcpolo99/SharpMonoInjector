@@ -1,5 +1,4 @@
-﻿using SharpMonoInjector.Gui.ViewModels;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Security.Principal;
 using System.Windows;
@@ -24,16 +23,6 @@ namespace SharpMonoInjector.Gui.Views
             }
 #endif
             InitializeComponent();
-            Loaded += (sender, e) =>
-            {
-                if (DataContext is MainWindowViewModel viewModel && viewModel.RefreshCommand.CanExecute(null))
-                {
-                    viewModel.RefreshCommand.Execute(null);
-                }
-            };
-
-
-
         }
 
         #region[Window Events]
@@ -66,21 +55,5 @@ namespace SharpMonoInjector.Gui.Views
         }
 
         #endregion
-
-        private void TextBox_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
-
-
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
-
-        }
     }
 }

@@ -483,7 +483,7 @@
                 <Label Grid.Column="0" Grid.Row="6" Margin="-5,0,0,0" Content="Class name" Foreground="#FF6A9E7D"/>
                 <TextBox Grid.Column="0" Grid.Row="7" Text="{Binding Path=InjectClassName, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FF272727" Background="#2A2A2C" Foreground="#FF39B561"/>
                 <Label Grid.Column="0" Grid.Row="8" Margin="-5,0,0,0" Content="Method name" Foreground="#FF6A9E7D"/>
-                <TextBox Grid.Column="0" Grid.Row="9" Text="{Binding Path=InjectMethodName, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FF272727" Background="#2A2A2C" Foreground="#FF39B561" Loaded="TextBox_Loaded"/>
+                <TextBox Grid.Column="0" Grid.Row="9" Text="{Binding Path=InjectMethodName, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FF272727" Background="#2A2A2C" Foreground="#FF39B561"/>
                 <Button Grid.Column="0" Grid.Row="11" Content="Inject" Style="{DynamicResource DarkButton}" Foreground="#FF289746" BorderBrush="#FF272727" HorizontalAlignment="Right" Command="{Binding Path=InjectCommand}" FontSize="16"/>
             </Grid>
         </GroupBox>

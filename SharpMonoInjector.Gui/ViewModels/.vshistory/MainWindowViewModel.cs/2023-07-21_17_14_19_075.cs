@@ -125,7 +125,7 @@ namespace SharpMonoInjector.Gui.ViewModels
 
                 foreach (MonoProcess process in processes)
                 {
-                    if (!process.Name.Contains(searchString))
+                    if (process.Name.Contains(searchString))
                     {
                         // Process with the specific string found, store its index and break the loop
                         index = processes.IndexOf(process);

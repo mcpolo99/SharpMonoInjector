@@ -460,7 +460,7 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0" Grid.Row="0" Margin="-5,0,0,0" Content="Process" HorizontalAlignment="Left" Foreground="#FF6A9E7D"/>
-                <Button Grid.Row="0" Content="Refresh" Style="{DynamicResource DarkButton}" Foreground="#FF289746" BorderBrush="#FF272727" HorizontalAlignment="Left" Command="{Binding Path=RefreshCommand, IsAsync=True}" Margin="234,3,0,3"/>
+                <Button Grid.Column="2" Grid.Row="0" Content="Refresh" Style="{DynamicResource DarkButton}" Foreground="#FF289746" BorderBrush="#FF272727" Height="20" HorizontalAlignment="Right" Command="{Binding Path=RefreshCommand, IsAsync=True}"/>
                 <ComboBox Grid.Column="0" Grid.Row="1" Style="{DynamicResource ComboBoxStyle1}" ItemsSource="{Binding Path=Processes}" SelectedItem="{Binding Path=SelectedProcess}" IsSynchronizedWithCurrentItem="True" Background="#FF4F4E4E" Foreground="#FF39B561">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -483,7 +483,7 @@
                 <Label Grid.Column="0" Grid.Row="6" Margin="-5,0,0,0" Content="Class name" Foreground="#FF6A9E7D"/>
                 <TextBox Grid.Column="0" Grid.Row="7" Text="{Binding Path=InjectClassName, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FF272727" Background="#2A2A2C" Foreground="#FF39B561"/>
                 <Label Grid.Column="0" Grid.Row="8" Margin="-5,0,0,0" Content="Method name" Foreground="#FF6A9E7D"/>
-                <TextBox Grid.Column="0" Grid.Row="9" Text="{Binding Path=InjectMethodName, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FF272727" Background="#2A2A2C" Foreground="#FF39B561" Loaded="TextBox_Loaded"/>
+                <TextBox Grid.Column="0" Grid.Row="9" Text="{Binding Path=InjectMethodName, UpdateSourceTrigger=PropertyChanged}" BorderBrush="#FF272727" Background="#2A2A2C" Foreground="#FF39B561"/>
                 <Button Grid.Column="0" Grid.Row="11" Content="Inject" Style="{DynamicResource DarkButton}" Foreground="#FF289746" BorderBrush="#FF272727" HorizontalAlignment="Right" Command="{Binding Path=InjectCommand}" FontSize="16"/>
             </Grid>
         </GroupBox>

@@ -12,11 +12,10 @@ using SharpMonoInjector.Gui.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Configuration.Assemblies;
 
 namespace SharpMonoInjector.Gui.ViewModels
 {
-    public partial class MainWindowViewModel : ViewModel
+    public class MainWindowViewModel : ViewModel
     {
         public string baseDir = AppDomain.CurrentDomain.BaseDirectory;
         public MainWindowViewModel()
@@ -31,8 +30,6 @@ namespace SharpMonoInjector.Gui.ViewModels
             CopyStatusCommand = new RelayCommand(ExecuteCopyStatusCommand);
 
             AssemblyPath = baseDir+"SevenDTDMono.dll";
-            InjectClassName = "Loader";
-            InjectMethodName = "Load";
 
         }
 
@@ -125,7 +122,7 @@ namespace SharpMonoInjector.Gui.ViewModels
 
                 foreach (MonoProcess process in processes)
                 {
-                    if (!process.Name.Contains(searchString))
+                    if (process.Name.Contains(searchString))
                     {
                         // Process with the specific string found, store its index and break the loop
                         index = processes.IndexOf(process);
@@ -134,7 +131,7 @@ namespace SharpMonoInjector.Gui.ViewModels
                     }
                 }
                 Status = "Processes refreshed";
-                SelectedProcess = Processes[0];
+                //SelectedProcess = Processes[0];
             }
             else
             {
@@ -147,7 +144,6 @@ namespace SharpMonoInjector.Gui.ViewModels
 
         private void ExecuteBrowseCommand(object parameter)
         {
-            AssemblyPath = "";
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Dynamic Link Library|*.dll";
             ofd.Title = "Select assembly to inject";

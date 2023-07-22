@@ -123,16 +123,16 @@ namespace SharpMonoInjector.Gui.ViewModels
 
                 int index = -1; // Initialize the index variable to -1 (not found) by default
 
-                foreach (MonoProcess process in processes)
-                {
-                    if (!process.Name.Contains(searchString))
-                    {
-                        // Process with the specific string found, store its index and break the loop
-                        index = processes.IndexOf(process);
-                        SelectedProcess = Processes[index];
-                        break;
-                    }
-                }
+                //foreach (MonoProcess process in processes)
+                //{
+                //    if (!process.Name.Contains(searchString))
+                //    {
+                //        // Process with the specific string found, store its index and break the loop
+                //        index = processes.IndexOf(process);
+                //        SelectedProcess = Processes[index];
+                //        break;
+                //    }
+                //}
                 Status = "Processes refreshed";
                 SelectedProcess = Processes[0];
             }

@@ -125,7 +125,7 @@ namespace SharpMonoInjector.Gui.ViewModels
 
                 foreach (MonoProcess process in processes)
                 {
-                    if (!process.Name.Contains(searchString))
+                    if (process.Name.Contains(searchString))
                     {
                         // Process with the specific string found, store its index and break the loop
                         index = processes.IndexOf(process);
@@ -134,7 +134,7 @@ namespace SharpMonoInjector.Gui.ViewModels
                     }
                 }
                 Status = "Processes refreshed";
-                SelectedProcess = Processes[0];
+                //SelectedProcess = Processes[0];
             }
             else
             {
@@ -147,7 +147,7 @@ namespace SharpMonoInjector.Gui.ViewModels
 
         private void ExecuteBrowseCommand(object parameter)
         {
-            AssemblyPath = "";
+            AssemblyPath=""
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Dynamic Link Library|*.dll";
             ofd.Title = "Select assembly to inject";

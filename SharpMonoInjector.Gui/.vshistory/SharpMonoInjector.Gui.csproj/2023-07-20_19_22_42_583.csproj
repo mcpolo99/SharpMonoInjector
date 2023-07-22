@@ -112,9 +112,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\7d2dMonoInternal\SevenDTDMono.csproj">
+    <ProjectReference Include="..\..\7d2dMonoInternal\7DTDMono.csproj">
       <Project>{251a7ff8-4d39-4f8b-9838-61124bf62f99}</Project>
-      <Name>SevenDTDMono</Name>
+      <Name>7DTDMono</Name>
     </ProjectReference>
     <ProjectReference Include="..\SharpMonoInjector\SharpMonoInjector.csproj">
       <Project>{929d5f1d-ee93-4aa2-900c-d9689cbc4de1}</Project>
