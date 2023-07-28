@@ -101,7 +101,7 @@ namespace SharpMonoInjector.Gui.ViewModels
                                         Name = p.ProcessName
                                     });
 
-                                    break; //Add J.E
+                                    //break; //Add J.E
                                 }
 
                                 Native.CloseHandle(handle);
@@ -119,13 +119,15 @@ namespace SharpMonoInjector.Gui.ViewModels
 
             if (Processes.Count > 0)
             {
+                SelectedProcess = null;
+                int index = -1;
                 string searchString = "7DaysToDie"; // Replace "your_specific_string" with the string you're looking for
 
-                int index = -1; // Initialize the index variable to -1 (not found) by default
+                 // Initialize the index variable to -1 (not found) by default
 
                 foreach (MonoProcess process in processes)
                 {
-                    if (!process.Name.Contains(searchString))
+                    if (process.Name.Contains(searchString))
                     {
                         // Process with the specific string found, store its index and break the loop
                         index = processes.IndexOf(process);
@@ -134,7 +136,7 @@ namespace SharpMonoInjector.Gui.ViewModels
                     }
                 }
                 Status = "Processes refreshed";
-                SelectedProcess = Processes[0];
+                //SelectedProcess = Processes[0];
             }
             else
             {
