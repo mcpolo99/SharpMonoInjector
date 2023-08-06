@@ -21,9 +21,6 @@ namespace SharpMonoInjector.Gui.ViewModels
 
     public partial class MainWindowViewModel : ViewModel
     {
-//#if DEBUG
-//        string dll = "SevenDTDMonoDebug.dll";
-//#endif
         static string searchPattern = "SevenDTDMono*.dll";
         static string baseDir = AppDomain.CurrentDomain.BaseDirectory;
         static string[] fdll = Directory.GetFiles(baseDir, searchPattern, SearchOption.TopDirectoryOnly);
@@ -166,7 +163,7 @@ namespace SharpMonoInjector.Gui.ViewModels
 
             if (ofd.ShowDialog() == true)
                 AssemblyPath = ofd.FileName;
-                
+            InjectNamespace = "SevenDTDMono";
         }
 
         private bool CanExecuteInjectCommand(object parameter)
