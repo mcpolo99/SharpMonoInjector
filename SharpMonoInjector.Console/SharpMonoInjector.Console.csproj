@@ -109,4 +109,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd /s /q "$(ProjectDir)obj"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
