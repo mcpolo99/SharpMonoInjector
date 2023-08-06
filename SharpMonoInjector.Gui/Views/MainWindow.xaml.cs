@@ -13,7 +13,7 @@ namespace SharpMonoInjector.Gui.Views
 
             bool IsElevated = new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 
-#if RELEASE
+#if RELEASE || RELEASE_NOUE || RELEASE_UE
             if (!IsElevated)
             {
                 string exeName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;

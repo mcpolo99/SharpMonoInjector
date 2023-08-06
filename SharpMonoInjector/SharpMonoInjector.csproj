@@ -18,8 +18,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\build\debug\7dtd\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>1701;1702</NoWarn>
@@ -28,12 +28,78 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\build\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>RELEASE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <WarningsAsErrors>NU1605</WarningsAsErrors>
     <NoWarn>1701;1702</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_NOUE|AnyCPU'">
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>RELEASE_NOUE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_UE|AnyCPU'">
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>RELEASE_NOUE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>RELEASE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_NOUE|x86'">
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>RELEASE_NOUE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_UE|x86'">
+    <OutputPath>..\..\build\7DTD\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>RELEASE_UE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>1701;1702</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <WarningsAsErrors>NU1605</WarningsAsErrors>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

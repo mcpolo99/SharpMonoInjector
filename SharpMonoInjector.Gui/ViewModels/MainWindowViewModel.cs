@@ -10,15 +10,24 @@ using System.Management;
 using Microsoft.Win32;
 using SharpMonoInjector.Gui.Models;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Configuration.Assemblies;
 
+
 namespace SharpMonoInjector.Gui.ViewModels
 {
+
     public partial class MainWindowViewModel : ViewModel
     {
-        public string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+//#if DEBUG
+//        string dll = "SevenDTDMonoDebug.dll";
+//#endif
+        static string searchPattern = "SevenDTDMono*.dll";
+        static string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+        static string[] fdll = Directory.GetFiles(baseDir, searchPattern, SearchOption.TopDirectoryOnly);
+        string dll = fdll[0];
         public MainWindowViewModel()
         {
             AVAlert = AntivirusInstalled();
@@ -29,8 +38,9 @@ namespace SharpMonoInjector.Gui.ViewModels
             InjectCommand = new RelayCommand(ExecuteInjectCommand, CanExecuteInjectCommand);
             EjectCommand = new RelayCommand(ExecuteEjectCommand, CanExecuteEjectCommand);
             CopyStatusCommand = new RelayCommand(ExecuteCopyStatusCommand);
-
-            AssemblyPath = baseDir+"SevenDTDMono.dll";
+            
+            AssemblyPath = dll;
+            InjectNamespace = "SevenDTDMono";
             InjectClassName = "Loader";
             InjectMethodName = "Load";
 
