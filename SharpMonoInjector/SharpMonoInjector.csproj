@@ -123,7 +123,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>IF NOT "$(Configuration)" == "Debug" (
+    rd /s /q "$(ProjectDir)obj" 
+)</PostBuildEvent>
   </PropertyGroup>
 </Project>
